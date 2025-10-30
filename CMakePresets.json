@@ -3,13 +3,13 @@
     "configurePresets": [
         {
             "name": "default",
-            "displayName": "default",
             "description": "Default config",
+            "hidden": false,
             "generator": "Unix Makefiles",
-            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "binaryDir": "${sourceDir}/build",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}"
+                "CMAKE_INSTALL_PREFIX": "YES"
             }
         }
     ]

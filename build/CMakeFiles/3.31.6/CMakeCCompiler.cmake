@@ -22,11 +22,11 @@ set(CMAKE_C_SIMULATE_VERSION "")
 
 
 
-set(CMAKE_AR "/nix/store/87zpmcmwvn48z4lbrfba74b312h22s6c-binutils-wrapper-2.44/bin/ar")
+set(CMAKE_AR "/run/current-system/sw/bin/ar")
 set(CMAKE_C_COMPILER_AR "/run/current-system/sw/bin/gcc-ar")
-set(CMAKE_RANLIB "/nix/store/87zpmcmwvn48z4lbrfba74b312h22s6c-binutils-wrapper-2.44/bin/ranlib")
+set(CMAKE_RANLIB "/run/current-system/sw/bin/ranlib")
 set(CMAKE_C_COMPILER_RANLIB "/run/current-system/sw/bin/gcc-ranlib")
-set(CMAKE_LINKER "/nix/store/87zpmcmwvn48z4lbrfba74b312h22s6c-binutils-wrapper-2.44/bin/ld")
+set(CMAKE_LINKER "/run/current-system/sw/bin/ld")
 set(CMAKE_LINKER_LINK "")
 set(CMAKE_LINKER_LLD "")
 set(CMAKE_C_COMPILER_LINKER "/nix/store/wlzvi1mvdx5ifpaxpw1hc1hcm3ia4wj2-binutils-wrapper-2.44/bin/ld")
