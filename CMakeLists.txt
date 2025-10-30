@@ -25,9 +25,22 @@ if(MACOS)
     include_directories(${OPENGL_INCLUDE_DIR})
     find_package(glfw3 REQUIRED)
     include_directories(${GLFW_INCLUDE_DIRS})
-else()
+elseif(WINDOWS)
     # Windows: Use modern Windows SDK libraries (no need to find them manually)
     # DirectX11 libraries are part of the Windows SDK
+else() # Linux
+    # set(OPENGL_USE_OPENGL ON)
+    # set(OPENGL_opengl_LIBRARY ON)
+    # set(OPENGL_INCLUDE_DIR ON)
+    # set(OPENGL_gl_LIBRARY ON)
+    
+    find_package(OpenGL REQUIRED)
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(GLFW REQUIRED glfw3)
+
+    include_directories(${OPENGL_INCLUDE_DIR})
+    include_directories(${GLFW_INCLUDE_DIRS})
+
 endif()
 
 include(CTest)
@@ -60,7 +73,7 @@ add_executable(demo Application.cpp
                 )
 
 if(MACOS OR LINUX)
-    target_link_libraries(demo ${OPENGL_gl_LIBRARY} glfw)
+    target_link_libraries(demo ${OPENGL_LIBRARIES} ${GLFW_LIBRARIES})
 elseif(WINDOWS)
     # Windows: Link DirectX11 and required Windows libraries
     target_link_libraries(demo 
