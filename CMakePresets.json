@@ -1,15 +1,15 @@
 {
-    "version": 3,
+    "version": 8,
     "configurePresets": [
         {
             "name": "default",
-            "description": "Default settings",
-            "hidden": false,
+            "displayName": "default",
+            "description": "Default config",
             "generator": "Unix Makefiles",
-            "binaryDir": "${workspaceFolder}/build",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "YES"
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}"
             }
         }
     ]
