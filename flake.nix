@@ -2,13 +2,22 @@
 
   description = "imgui-starter dev shell";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-20.05";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
 
-  outputs = { self, nixpkgs }: {
+  outputs = { self, nixpkgs }:
 
-    devShells.default = nixpkgs.lib.mkShell {
+  let
+      
+    system = "x86_64-linux";
+    pkgs = import nixpkgs { inherit system; };
 
-      buildInputs = with nixpkgs; [
+  in
+
+  {
+
+    devShells.${system}.default = pkgs.mkShell {
+
+      buildInputs = with pkgs; [
 
         cmake
 	gcc
