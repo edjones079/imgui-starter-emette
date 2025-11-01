@@ -13,9 +13,9 @@ namespace ClassGame {
         void GameStartUp() 
         {
             // Initialize logging system
-//            Logger& logger = Logger::GetInstance();
-//            logger.LogInfo("Game started successfully");
-//            logger.LogGameEvent("Application initialized");
+            //Logger logger = Logger::GetInstance();
+            //logger.LogInfo("Game started successfully");
+            //logger.LogGameEvent("Application initialized");
         }
 
         //
@@ -27,15 +27,27 @@ namespace ClassGame {
             ImGui::DockSpaceOverViewport();
             ImGui::ShowDemoWindow();
 
-            ImGui::Begin("ImGui Log Demo");
+
+            // Game Control
+
+            ImGui::Begin("Game Control");
             ImGui::LogButtons();
 
-            if (ImGui::Button("Copy \"Hello, world!\" to clipboard"))
+            if (ImGui::Button("Copy \"RAH!\" to clipboard"))
             {
                 ImGui::LogToClipboard();
-                ImGui::LogText("Hello, world!");
+                ImGui::LogText("RAH!");
                 ImGui::LogFinish();
             }
+
+        
+            ImGui::End();
+
+            // Game Log
+
+            ImGui::Begin("Game Log");
+            ImGui::LogButtons();
+
             ImGui::End();
         }
 
